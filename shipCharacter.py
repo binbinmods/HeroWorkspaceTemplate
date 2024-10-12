@@ -6,7 +6,7 @@ import json
 # Parameters
 target_name = "<Hero, The Subclass>"
 csproj_name = "<TheSubclass>"
-enabled = True
+enabled = False
 load_to_local_ato = True
 doZip = True
 

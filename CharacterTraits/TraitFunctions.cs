@@ -7,7 +7,7 @@ using Obeliskial_Essentials;
 using System.IO;
 using static UnityEngine.Mathf;
 
-namespace TheSubclass
+namespace TheMagician
 {
     public class TraitFunctions
     {
@@ -39,7 +39,7 @@ namespace TheSubclass
 
         public static void TraitHealHero(ref Character _character, ref Hero _target, int healAmount, string traitName)
         {
-            if (_target==null || !_target.IsHero){
+            if (_target==null || !_target.IsHero || !_target.Alive){
                 return;
             }
             
@@ -321,6 +321,5 @@ namespace TheSubclass
 
             //MatchManager.Instance.CastCard(_card: card);
         }
-
     }
 }

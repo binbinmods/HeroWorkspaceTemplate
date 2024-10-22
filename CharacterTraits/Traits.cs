@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Obeliskial_Content;
 
-namespace TheSubclass
+namespace TheMagician
 {
     [HarmonyPatch]
     internal class Traits

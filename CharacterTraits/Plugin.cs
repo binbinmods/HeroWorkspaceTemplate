@@ -7,7 +7,7 @@ using System.IO;
 using UnityEngine;
 using System;
 
-namespace TheSubclass
+namespace TheMagician
 {
     [BepInPlugin(PluginInfo.PLUGIN_GUID, PluginInfo.PLUGIN_NAME, PluginInfo.PLUGIN_VERSION)]
     [BepInDependency("com.stiffmeds.obeliskialessentials")]
@@ -49,8 +49,8 @@ namespace TheSubclass
             [HarmonyPatch(typeof(EventData), "Init")]
             public static void InitPrefix(ref Globals __instance)
             {
-                // Trying to add the character to the list of all characters so that they will be added to events with the "RepeatForAllCharacters" flag
-                // not sure if this is the correct place to put this function. It feels weird to put it into the Traits.cs file
+                // Do Not Change this for now
+
                 //Plugin.Log.LogDebug("Binbin -- Attempting to add subclass to list for all events");
 
                 //Plugin.Log.LogDebug("Binbin -- After Adding List: " + string.Join(";", Globals.Instance.SubClass.Select(x => x.Key).ToArray()));

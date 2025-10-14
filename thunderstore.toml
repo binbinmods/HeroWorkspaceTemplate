@@ -5,7 +5,7 @@ schemaVersion = "0.1.0"
 namespace = "Binbin"
 name = "CharacterToReplace"
 versionNumber = "0.1.0"
-description = "Hero Mod for CharacterToReplace, the SubclassToReplace. ..."
+description = "Hero Mod for CharacterToReplace, the SubclassToReplace, a descriptionToReplace
 websiteUrl = "https://github.com/binbinmods/CharacterToReplace"
 containsNsfwContent = false
 

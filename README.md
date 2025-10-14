@@ -1,47 +1,23 @@
-# CharacterToReplace, the SubclassToReplace
+# README
 
-A hero mod, introducing CharacterToReplace, a ...
+This template is used to create heroes for Across the Obelisk in association with the Obeliskial Essentials and Obeliskial Content mods.
 
-This character was designed by @designer.
+## How To Use
 
-This currently does not include any events or quests related to CharacterToReplace other than those available to all heroes or all heroes of a specific class.
-
-A couple of notes:
-
-## Notes:
-
-- I understand that things are going to be janky at times, and there are definitely bugs that will be worked out
-- **What to do if CharacterToReplace is not unlocked:** Due to some jankiness of the way the code works, CharacterToReplace is unlocked only for the profile that is open when you launch the game (and for new profiles). So if they aren't unlocked in the correct profile, switch to that profile, close the game and re-open it and they will be unlocked. I'll fix this in the future, but most people won't notice it. You can also just use the profile editor to fix it.
-- There are **no character events** for CharacterToReplace at this time beyond the ones that are available to all characters of a given class (such as pet trainers or healers being able to remove cards at Rest areas).
-
-This mod relies on [Obeliskial Content](https://across-the-obelisk.thunderstore.io/package/meds/Obeliskial_Content/).
-
-## CharacterToReplace Summary
-
-![Summary](https://raw.githubusercontent.com/binbinmods/CharacterToReplace/refs/heads/main/Assets/CharacterToReplaceSummary.png)
-
-## Installation (manual)
-
-1. Install [Obeliskial Essentials](https://across-the-obelisk.thunderstore.io/package/meds/Obeliskial_Essentials/) and [Obeliskial Content](https://across-the-obelisk.thunderstore.io/package/meds/Obeliskial_Content/).
-2. Click _Manual Download_ at the top of the page.
-3. In Steam, right-click Across the Obelisk and select _Manage_->_Browse local files_.
-4. Extract the archive into the game folder. Your `Across the Obelisk` folder should now contain a `BepInEx` folder and a `doorstop_libs` folder.
-5. Run the game. If everything runs correctly, you will see this mod in the list of registered mods on the main menu.
-6. Press F5 to open/close the Config Manager and F1 to show/hide mod version information.
-7. Note: I am not certain about these install instructions. In the worst case, just copy `com.binbin.CharacterToReplace.dll` into the `BepInEx\plugins` folder, and the _Character_ folder (the one with the subfolders containing the json files) into `BepInEx\config\Obeliskial_importing`
-
-## Installation (automatic)
-
-1. Download and install [Thunderstore Mod Manager](https://www.overwolf.com/app/Thunderstore-Thunderstore_Mod_Manager) or [r2modman](https://across-the-obelisk.thunderstore.io/package/ebkr/r2modman/).
-2. Click **Install with Mod Manager** button on top of the page.
-3. Run the game via the mod manager.
-
-## Support
-
-This has been updated for Across the Obelisk version 1.6.0.
-
-Hope you enjoy it and if have any issues, ping me in Discord or make a post in the **modding #support-and-requests** channel of the [official Across the Obelisk Discord](https://discord.gg/across-the-obelisk-679706811108163701).
-
-## Donation
-
-Please do not donate to me. If you wish to support me, I would prefer it if you just gave me feedback.
+1. Download/clone this repo
+2. Setup your workspace by copying the game assemblies to a `!libs` folder two levels up from where this repository is downloaded. Alternatively, use those found [here](https://github.com/binbinmods/-libs)
+3. Replace "CharacterToReplace" with your chosen character's name for all file names with that present
+4. Use Find and Replace "CharacterToReplace" with your chosen character's name
+5. Replace "SubclassToReplace" with your chosen character's subclass id (no spaces)
+6. Replace "DescriptionToReplace" with the description you want to appear on Thunderstore.
+7. Fill out the [Hero Creation Spreadsheet](https://docs.google.com/spreadsheets/d/1JU52nKx3Qi-Qhsw4upqWr71mGhB0QjaeG0-cOhaQ5B8/edit?usp=sharing)
+8. Download your Hero Creation Spreadsheet (ideally as `HeroName.xlsx`). Save it into this directory.
+9. Update and Run `loadFromExcel.py`. This should be pre-configured to create all the files in the appropriate places, but you should check to make sure `excel_file_name` properly matches your `.xlsx` file.
+10. Update the PostBuildEvents of the `.csproj` file to copy the .dll to your local game (save you from having to copy and paste it or the like)
+11. Update the `ship_mod.py` file (specifically `bepinex_dir` should be changed to the location of your BepInEx folder). This file copies the the remainder of the files over to the appropriate locations.
+12. Create your traits in the `Traits.cs` file. Building should now automatically copy the dll and accessory files to your local game.
+13. Create your custom cards/enchantments using the [Card Creator](https://code.secretsisters.gay/AtO_Custom). Add those to `~/CharacterToReplace/BepInEx/Obeliskial_importing/CharacterToReplace/card` and any associated sprites to `~/CharacterToReplace/BepInEx/Obeliskial_importing/CharacterToReplace/sprite`. These folders should have been generated by `loadFromExcel.py`
+14. Add the visuals for Silhouettes, Portraits, and cardback to the `~/CharacterToReplace/BepInEx/Obeliskial_importing/CharacterToReplace/sprite` folder.
+15. Optional: If you wish to alter the skin of your hero, then you need to create a separate Sprite Map in the `~/sprite` folder along with updating the skin json file to reference that Sprite Map
+16. Optional: Create a Summary for your character so people can easily see what the character does. Save that summary to `~/Assets`.
+17. Test your mod (sorry I don't have a testing suite made yet)

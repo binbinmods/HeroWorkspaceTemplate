@@ -44,7 +44,8 @@
   </ItemGroup>
 
   <Target Name="PostBuild" AfterTargets="PostBuildEvent">
-    <Copy SourceFiles="$(TargetPath)" DestinationFolder="../../../plugins" />
+  <!-- Update this filepath to be where your game's local .dlls should go -->
+    <!-- <Copy SourceFiles="$(TargetPath)" DestinationFolder="../../../plugins" /> -->
     <Copy SourceFiles="$(TargetPath)" DestinationFolder="CharacterToReplace/BepInEx/plugins" />
     <Exec Command="/usr/bin/python3 &quot;$(ProjectDir)ship_mod.py&quot;" />
 
